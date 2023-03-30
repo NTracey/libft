@@ -6,11 +6,11 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:31:26 by trngo             #+#    #+#             */
-/*   Updated: 2023/03/22 17:36:45 by trngo            ###   ########.fr       */
+/*   Updated: 2023/03/30 13:46:38 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t len)
 {
@@ -28,6 +28,7 @@ void	*ft_memset(void *str, int c, size_t len)
 }
 /*
 #include <stdio.h>
+#include <stddef.h>
 int main()
 {
     char str[] = "C programming memset function";
