@@ -6,16 +6,16 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:53:51 by trngo             #+#    #+#             */
-/*   Updated: 2023/03/30 13:56:09 by trngo            ###   ########.fr       */
+/*   Updated: 2023/03/30 14:59:21 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBTF_H
-#define LIBTF_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stddef.h>
 
-typedef  struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
