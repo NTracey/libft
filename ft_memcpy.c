@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:17:33 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/02 15:06:09 by trngo            ###   ########.fr       */
+/*   Created: 2023/04/02 16:48:32 by trngo             #+#    #+#             */
+/*   Updated: 2023/04/04 20:06:32 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t len)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*new_str;
-	unsigned int	i;
+	size_t			i;
+	unsigned char	*new_dest;
+	const char		*new_src;
 
-	new_str = str;
+	new_dest = dest;
+	new_src = src;
 	i = 0;
-	while (i < len)
+	if (!dest && !src)
+		return (NULL);
+	while (i < n)
 	{
-		new_str[i] = 0;
+		new_dest[i] = new_src[i];
 		i++;
 	}
-	return ;
+	return (new_dest);
 }
 /*
 #include <stdio.h>
 int main()
 {
-    char str[] = "C programming bzero function";
-    printf( "Before: %s\n", str );
-    ft_bzero( str, 5 );
-    printf( "After:  %s\n", str );
+	char src[] = "dog";
+	char dest[] = "cat";
+
+	printf("Dest before: %s\n", dest);
+	ft_memcpy(dest, src, 1);
+	printf("Dest after: %s\n", dest);
+	ft_memcpy(dest, src, sizeof(src));
+	printf("Dest after: %s\n", dest);
+	return (0);
 }
 */

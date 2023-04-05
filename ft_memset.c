@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:31:26 by trngo             #+#    #+#             */
-/*   Updated: 2023/03/30 13:46:38 by trngo            ###   ########.fr       */
+/*   Updated: 2023/04/02 14:15:10 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t len)
 
 	new_str = str;
 	i = 0;
-	while (new_str[i] && i < len)
+	while (i < len)
 	{
 		new_str[i] = c;
 		i++;
@@ -28,7 +28,6 @@ void	*ft_memset(void *str, int c, size_t len)
 }
 /*
 #include <stdio.h>
-#include <stddef.h>
 int main()
 {
     char str[] = "C programming memset function";

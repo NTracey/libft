@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:17:33 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/02 15:06:09 by trngo            ###   ########.fr       */
+/*   Created: 2023/04/04 20:52:17 by trngo             #+#    #+#             */
+/*   Updated: 2023/04/04 21:54:51 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*new_str;
-	unsigned int	i;
+	size_t			i;
+	unsigned char	*new_dest;
+	unsigned char	*new_src;
 
-	new_str = str;
+	new_dest = (unsigned char*)dest;
+	new_src = (unsigned char*)src;
 	i = 0;
-	while (i < len)
+	if (!dest && !src)
+		return (NULL);
+	if (new_dest > new_src)
 	{
-		new_str[i] = 0;
-		i++;
+		while (n--)
+			new_dest[n] = new_src[n];
 	}
-	return ;
+	else
+	{
+		while (i < n)
+		{
+			new_dest[i] = new_src[i];
+			i++;
+		}
+	}
+	return (new_dest);
 }
-/*
-#include <stdio.h>
-int main()
-{
-    char str[] = "C programming bzero function";
-    printf( "Before: %s\n", str );
-    ft_bzero( str, 5 );
-    printf( "After:  %s\n", str );
-}
-*/

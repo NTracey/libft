@@ -6,14 +6,14 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:53:51 by trngo             #+#    #+#             */
-/*   Updated: 2023/03/30 14:59:21 by trngo            ###   ########.fr       */
+/*   Updated: 2023/04/02 14:23:10 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
