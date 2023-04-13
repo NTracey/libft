@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 20:52:17 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/05 18:05:58 by trngo            ###   ########.fr       */
+/*   Created: 2023/04/13 16:50:39 by trngo             #+#    #+#             */
+/*   Updated: 2023/04/13 17:57:53 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	size_t			i;
-	unsigned char	*new_dest;
-	unsigned char	*new_src;
+	int	i;
 
-	new_dest = (unsigned char *)dest;
-	new_src = (unsigned char *)src;
-	i = 0;
-	if (!dest && !src)
-		return (NULL);
-	if (new_dest > new_src)
+	i = ft_strlen(str);
+	while (i >= 0)
 	{
-		while (n--)
-			new_dest[n] = new_src[n];
+		if (str[i] == c)
+			return ((char *)str + i);
+		i--;
 	}
-	else
-	{
-		while (i < n)
-		{
-			new_dest[i] = new_src[i];
-			i++;
-		}
-	}
-	return (new_dest);
+	if (c == 0)
+		return ((char *)str + i);
+	return (0);
 }
