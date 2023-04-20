@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 21:19:14 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/20 18:58:43 by trngo            ###   ########.fr       */
+/*   Created: 2023/04/20 18:59:12 by trngo             #+#    #+#             */
+/*   Updated: 2023/04/20 19:15:14 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strdup(const char *src)
 {
-	int	i;
-	int	sign;
-	int	integer;
-	int	digit;
+	int		i;
+	char	*dest;
+	int		len;
 
+	len = ft_strlen(src);
+	if (!(dest = malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	i = 0;
-	sign = 1;
-	integer = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		str++;
-	if (str[i] == '-' || str[i] == '+')
+	while (src[i])
 	{
-		if (str[i] == '-')
-			sign *= -1;
+		dest[i] = src[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		digit = str[i] - '0';
-		integer = integer * 10 + digit;
-		i++;
-	}
-	return (integer * sign);
+	dest[i] = '\0';
+	return (dest);
 }
+/*
+int main()
+{
+	char *str = "Helloworld";
+	char *result;
+	result = strdup(str);
+	printf("The string : %s\n", result);
+	return 0;
+}
+*/
