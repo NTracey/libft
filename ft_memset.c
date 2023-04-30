@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:31:26 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/02 14:15:10 by trngo            ###   ########.fr       */
+/*   Updated: 2023/04/30 16:36:09 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *str, int c, size_t len)
 {
 	unsigned char	*new_str;
-	unsigned int	i;
+	size_t			i;
 
 	new_str = str;
 	i = 0;

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: trngo <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/04/20 20:28:51 by trngo             #+#    #+#              #
+#    Updated: 2023/04/30 21:34:00 by trngo            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # libft.a is the binary name
 NAME = libft.a
 
@@ -10,8 +22,7 @@ SRC = ft_isalpha.c \
 	  ft_strlen.c \
 	  ft_memset.c \
 	  ft_bzero.c \
-	 # ft_memcpy.c \
-	  ft_memccpy.c \
+	  ft_memcpy.c \
 	  ft_memmove.c \
 	  ft_strlcpy.c \
 	  ft_strlcat.c \
@@ -56,7 +67,6 @@ CC = gcc
 
 # mandatory to create a $(NAME) rule to execute other rules and render a binary.
 $(NAME): $(OBJ)
-#	$(CC) $(CFLAGS) -c $(SRCS) -I./
 	ar rcs $(NAME) $(OBJ)
 
 # all the targets (multiple targets) to run

@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:14:15 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/13 16:49:46 by trngo            ###   ########.fr       */
+/*   Updated: 2023/04/30 21:58:08 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ char	*ft_strchr(const char *str, int c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c)
+		if (str[i] == (unsigned char)c)
 			return ((char *)&str[i]);
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)str + i);
+	if ((unsigned char)c == '\0')
+		return ((char *)&str[i]);
 	return (0);
 }
 /*

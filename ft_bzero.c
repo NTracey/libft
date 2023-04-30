@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:17:33 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/02 15:06:09 by trngo            ###   ########.fr       */
+/*   Updated: 2023/04/30 16:37:25 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *str, size_t len)
 {
 	unsigned char	*new_str;
-	unsigned int	i;
+	size_t			i;
 
 	new_str = str;
 	i = 0;
