@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:55:13 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/20 20:12:24 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/06 17:54:40 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	char	*new_s1;
+	char	*result;
 
 	i = 0;
 	j = 0;
-	new_s1 = malloc(sizeof(char *) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!s1 || !s2)
-		return (NULL);
-	if (!new_s1)
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!result)
 		return (NULL);
 	while (s1[i] != '\0')
 	{
-		new_s1[i] = s1[i];
+		result[i] = s1[i];
 		i++;
 	}
-	while (s2[j])
+	while (s2[j] != '\0')
 	{
-		new_s1[i] = s2[j];
-		i++;
+		result[i + j] = s2[j];
 		j++;
 	}
-	new_s1[i] = '\0';
-	return (new_s1);
+	result[i + j] = '\0';
+	return (result);
 }
 /*
 int main(void)

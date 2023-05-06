@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:55:39 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/30 18:19:12 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/06 17:56:15 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 
 	len = strlen(s);
-	if (s == 0 || f == 0)
-		return (NULL);
 	result = (char *)malloc((len + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);

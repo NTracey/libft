@@ -6,65 +6,48 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:59:53 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/30 23:24:03 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/06 22:19:42 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_sign(int n)
+static size_t	get_num_len(int n)
 {
-	if (n < 0)
-		return (-1);
-	else
-		return (1);
-}
+	size_t	len;
 
-static int	count_digits(int n)
-{
-	int	count;
-
-	count = 0;
-	if (n == 0)
-		count = 1;
-	if (n < 0)
-		count++;
+	len = 0;
+	if (n <= 0)
+		len = 1;
 	while (n != 0)
 	{
-		count++;
-		n /= 10;
+		n = n / 10;
+		len++;
 	}
-	return (count);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	long	nbr;
-	size_t	digits;
-	int		sign;
-	char	*str;
+	char			*str;
+	size_t			len;
+	unsigned int	nbr;
 
-	i = 0;
-	nbr = n;
-	digits = count_digits(nbr);
-	sign = get_sign(nbr);
-	str = (char *)malloc((digits + sign - 1) * sizeof(char));
-	if (str == 0)
+	len = get_num_len(n);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	str[digits] = '\0';
-	if (nbr == 0)
-		str[0] = '0';
-		return (str);
-	if (nbr < 0)
+	str[len] = '\0';
+	if (n < 0)
+		nbr = -n;
+	else
+		nbr = n;
+	while (len--)
 	{
-		str[0] = '-';
-		nbr = -nbr;
-	}
-	while (nbr != 0)
-	{
-		str[i--] = '0' + (nbr % 10);
+		str[len] = (nbr % 10) + '0';
 		nbr /= 10;
 	}
+	if (n < 0)
+		str[0] = '-';
 	return (str);
 }

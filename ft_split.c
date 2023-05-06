@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 21:57:49 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/30 22:31:44 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/06 18:31:49 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*get_next_word(char const *s, char c)
 	while (s[i] != '\0' && s[i] != c)
 		i++;
 	word = (char *)malloc((i + 1) * sizeof(char));
-	if (word == 0)
+	if (!word)
 		return (NULL);
 	i = 0;
 	while (s[i] != '\0' && s[i] != c)
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	int		word_count;
 	int		i;
 
-	if (s == 0)
+	if (!s)
 		return (NULL);
 	word_count = count_words(s, c);
 	result = (char **)malloc((word_count + 1) * sizeof(char *));
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		result[i] = get_next_word(s, c);
-		if (result[i] == 0)
+		if (!result[i])
 			return (NULL);
 		s += strlen(result[i]);
 		i++;
