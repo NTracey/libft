@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:20:39 by trngo             #+#    #+#             */
-/*   Updated: 2023/05/06 17:35:31 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/07 17:18:46 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	else
 		src_len = src_len + dest_len;
 	i = 0;
-	while (src[i] != '\0' && (dest_len + i + 1) < size)
+	while (src[i] != '\0' && (dest_len + i) < (size - 1))
 	{
 		dest[dest_len + i] = src[i];
 		i++;

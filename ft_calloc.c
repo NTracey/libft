@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 17:31:16 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/13 18:05:35 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/07 17:31:15 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_calloc(size_t n, size_t size)
 	void	*ptr;
 
 	ptr = malloc(n * size);
-	if (ptr == NULL)
-		return (0);
+	if (!ptr)
+		return (NULL);
 	else
-		ft_memset(ptr, 0, size * n);
+		ft_bzero(ptr, size * n);
 	return (ptr);
 }
