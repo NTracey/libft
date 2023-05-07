@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:53:59 by trngo             #+#    #+#             */
-/*   Updated: 2023/04/30 16:49:07 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/07 18:15:40 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		}
 		dest[i] = '\0';
 	}
-	return (strlen(src));
+	return (ft_strlen(src));
 }
 /*
 int main()

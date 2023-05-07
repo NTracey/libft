@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:59:12 by trngo             #+#    #+#             */
-/*   Updated: 2023/05/06 17:45:24 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/07 18:35:07 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 char	*ft_strdup(const char *str)
 {
 	char	*new_str;
+	size_t	len;
 
-	new_str = malloc(ft_strlen(str) + 1);
+	len = ft_strlen(str);
+	new_str = malloc(len + 1);
 	if (new_str == NULL)
 	{
 		return (NULL);
 	}
-	if (new_str != NULL)
-		strcpy(new_str, str);
+	ft_memcpy(new_str, str, len);
+	new_str[len] = '\0';
 	return (new_str);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: trngo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 21:57:49 by trngo             #+#    #+#             */
-/*   Updated: 2023/05/07 16:33:55 by trngo            ###   ########.fr       */
+/*   Updated: 2023/05/07 18:14:17 by trngo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		result[i] = get_next_word(s, c);
-		s += strlen(result[i]);
+		s += ft_strlen(result[i]);
 		i++;
 	}
 	result[word_count] = NULL;
